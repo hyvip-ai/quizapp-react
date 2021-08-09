@@ -1,6 +1,6 @@
 import React from 'react'
 import Options from './Options'
-function Detail({question}) {
+function Detail({question,index , myanswers , ans}) {
     function shuffle(a) {
         var j, x, i;
         for (i = a.length - 1; i > 0; i--) {
@@ -18,7 +18,7 @@ function Detail({question}) {
             <h6>{question.question}</h6>
             
                 <div className="answers">
-                <Options opts = {newopt}/>
+                <Options opts = {newopt} ind = {index} myanswers= {myanswers} ans = {ans}/>
                 </div>
             
         </div>

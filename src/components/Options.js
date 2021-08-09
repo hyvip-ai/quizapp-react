@@ -1,8 +1,9 @@
 import React from 'react'
 import Option from './Option'
-function Options({opts}) {
+import uuid from "uuid/dist/v4"
+function Options({opts,ind,myanswers,ans}) {
     return (
-        opts.map((item,index)=>{return <Option key={index} data={item} ind={index}/>})   
+        opts.map((item,index)=>{return <Option key={uuid()} data={item} qindex={ind} setanswer={myanswers} ans ={ans}/>})   
     )
 }
 
