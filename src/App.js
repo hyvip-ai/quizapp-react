@@ -13,14 +13,13 @@ function App() {
   const [showscore, setscore] = useState('')
   const [correctanswers, setcorrectanswers] = useState([])
   const [spinner, setspinner] = useState(false)
+
   var score = 0 
 
   var final = ''
   useEffect(() => {
     console.log('asche')
-  }, [qstate,genvis,qindex]) 
-  // var myanswers = []
- 
+  }, [myanswer]) 
 
   async function callurl(url) {
     setspinner(true)
@@ -59,7 +58,7 @@ function App() {
 
   return (
     <div>
-      {genvis ? <Generate setvis={setgenvis} updateurl={callurl} /> : null}
+      {genvis ? <Generate setvis={setgenvis} updateurl={callurl}  setscore={setscore}/> : null}
       {spinner? <Spinner/>:null}
       {qstate.length !== 0 ? <Quizstart quizdata={qstate} changeindex={setindex} acin={qindex} /> : null}
       {qstate.length !== 0 ? <Question totaldata={qstate} finish={setgenvis} chnage={setindex} index={qindex} ans={myanswer} myanswers={setmyanswer} cheks={checkscore} qsatet={qupdatestate}/> : null}

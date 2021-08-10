@@ -1,7 +1,7 @@
 import React from 'react'
 import '../index.css'
 import { useState } from 'react'
-function Generate({setvis,updateurl}) {
+function Generate({setvis,updateurl,setscore}) {
     const [num, setnum] = useState(10)
     function createurl(){
         var qnum = num;
@@ -13,6 +13,7 @@ function Generate({setvis,updateurl}) {
         // console.log(url)
         setvis(false)
         updateurl(url)
+        setscore("")
     }
     return (
         <div className="container">
@@ -27,8 +28,8 @@ function Generate({setvis,updateurl}) {
                         <option value="9" defaultValue>Select Question Category</option>
                         <option value="9">General Knowledge (Default)</option>
                         <option value="31">Japanese Anime and Manga</option>
-                        <option value="19">Mathamatics</option>
-                        <option value="30">Scientific Gadgets</option>
+                        <option value="20">Mythology</option>
+                        <option value="10">Entertainment Books</option>
                         <option value="12">Music</option>
                     </select>
                     <select className="form-select" aria-label="Default select example" id="difficulty">

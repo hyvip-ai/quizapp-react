@@ -2,6 +2,8 @@ import React from 'react'
 
 function Next({indexchange,total}) {
     function newstate(){
+        
+        
         indexchange((prev)=>{
             if(prev === total.length - 1 ){
                 indexchange(0)

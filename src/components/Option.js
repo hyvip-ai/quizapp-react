@@ -2,9 +2,11 @@ import React from 'react'
 
 function Option({ data, qindex,setanswer,ans}) {
    
-
+var myanswer = []
     
 function savedata(data){
+    myanswer.push(data)
+    console.log(myanswer)
     setanswer((prev)=>{
         console.log(prev);
         var newarr = [...prev];
